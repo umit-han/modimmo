@@ -10,23 +10,15 @@ export default [
     ignores: ["node_modules/", "dist/", "build/"],
     languageOptions: {
       parser: tsparser,
-      globals: {
-        module: "readonly", // module değişkenini tanımlamak için
-      },
     },
     plugins: {
       "@typescript-eslint": tseslint,
       prettier,
     },
     rules: {
-      // js.configs.recommended ve tseslint.configs.recommended'ın içindeki kurallar
       ...js.configs.recommended.rules,
       ...tseslint.configs.recommended.rules,
       "prettier/prettier": "warn",
-      "@typescript-eslint/no-unused-vars": "warn", // Kullanılmayan değişkenler için
-      "@typescript-eslint/no-explicit-any": "warn", // any kullanımına karşı uyarı
-      "@typescript-eslint/no-unsafe-function-type": "off", // unsafe-function-type hatasını kapat
-      "no-undef": "error", // "module" gibi tanımlanmamış global değişkenler için hata verir
     },
   },
 ];
