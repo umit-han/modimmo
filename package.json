@@ -1,27 +1,71 @@
 {
-  "name": "redfin",
+  "name": "modimmo",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint-staged": "lint-staged",
+    "format": "prettier --write .",
+    "storybook": "storybook dev -p 6006",
+    "test-storybook": "storybook test",
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "next": "15.2.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@chromatic-com/storybook": "^3.2.6",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.24.0",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/experimental-addon-test": "^8.6.12",
+    "@storybook/experimental-nextjs-vite": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "@storybook/test-runner": "^0.22.0",
+    "@storybook/types": "^8.6.12",
+    "@tailwindcss/postcss": "^4.1.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "@vitest/browser": "^3.1.1",
+    "@vitest/coverage-v8": "^3.1.1",
+    "eslint": "^9.23.0",
     "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-storybook": "^0.12.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.5.0",
+    "playwright": "^1.51.1",
+    "prettier": "^3.5.3",
+    "storybook": "^8.6.12",
+    "tailwindcss": "^4.1.1",
+    "typescript": "^5",
+    "vitest": "^3.1.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

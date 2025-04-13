@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/blocks";
+import { Button } from "./Button";
+
+<Meta title="Docs/components/ui/Buttons" component={Button} />
+
+# Button
+
+Kullanıcı etkileşimi sağlamak için kullanılan temel bileşen. `primary` ve `secondary` olmak üzere iki varyantı vardır.
+
+<Canvas>
+  <Story name="Primary">
+    <Button label="Tıkla" variant="primary" />
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} />
