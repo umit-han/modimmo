@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { expect, fn, userEvent, within } from "@storybook/test";
-import type { PlayFunctionContext } from "@storybook/types";
 
 import { Button } from "./Button";
 
@@ -26,7 +25,7 @@ export const Primary: Story = {
     label: "Button",
     size: "large",
   },
-  play: async (context: PlayFunctionContext<typeof Button>) => {
+  play: async context => {
     const { canvasElement, args } = context;
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button");
