@@ -1,5 +1,5 @@
-// tailwind.config.js
 /* eslint-env node */
+// tailwind.config.js
 
 import { colors } from "./src/constants/colors";
 import type { Config } from "tailwindcss";
