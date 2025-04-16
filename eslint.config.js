@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import tsparser from "@typescript-eslint/parser";
 import prettier from "eslint-plugin-prettier";
+import globals from "globals";
 
 /* eslint-env node */
 export default [
@@ -10,6 +11,10 @@ export default [
     ignores: ["node_modules/", "dist/", "build/"],
     languageOptions: {
       parser: tsparser,
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+      },
     },
     plugins: {
       "@typescript-eslint": tseslint,
