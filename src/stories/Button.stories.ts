@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import { fn, userEvent, within, expect } from "@storybook/test";
 
 import { Button } from "./Button";
 
@@ -29,6 +29,14 @@ export const Primary: Story = {
   args: {
     primary: true,
     label: "Button",
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button");
+
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalled();
+    await expect(button).toHaveTextContent("Button");
   },
 };
 

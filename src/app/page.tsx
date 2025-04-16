@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui/Button/Button";
 
 export default function Home() {
@@ -7,10 +6,8 @@ export default function Home() {
       <h1 className="text-blue-500 text-2xl mb-6 font-bold">Components</h1>
       <main className="">
         <div>
-          <h1 className="text-blue-400 text-lg mb-4 font-bold">Buttons</h1>
-          <Button onClick={() => {}} variant="primary">
-            Button
-          </Button>
+          <h2 className="text-lg mb-4 font-bold">Buttons</h2>
+          <Button label="Primary Button" size="md" variant="primary" />
         </div>
       </main>
       <footer></footer>
