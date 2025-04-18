@@ -20,8 +20,8 @@ This project is built using **Next.js**, **TypeScript**, **TailwindCSS**, **Stor
 To set up the development environment:
 
 ```bash
-git clone <repository-url>
-cd project-name
+git clone git@github.com:umit-han/modimmo.git
+cd modimmo
 npm install
 npm run prepare # Sets up Husky Git hooks
 ```
