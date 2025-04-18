@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 modimmo
 
-## Getting Started
+This project is built using **Next.js**, **TypeScript**, **TailwindCSS**, **Storybook**, **ESLint**, **Prettier**, **Commitlint**, and more. It provides a modern frontend development setup focused on scalability, consistency, and developer experience.
 
-First, run the development server:
+---
+
+## 🛠️ Technologies Used
+
+- **Next.js** – React-based framework for server-side rendering and routing
+- **TypeScript** – Strongly typed JavaScript for better code quality
+- **TailwindCSS** – Utility-first CSS framework for fast UI development
+- **ESLint & Prettier** – Code linting and formatting
+- **Storybook** – UI component development and documentation tool
+- **Commitlint & Husky** – Enforces conventional commit messages and Git hooks
+
+---
+
+## 📦 Getting Started
+
+To set up the development environment:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd project-name
+npm install
+npm run prepare # Sets up Husky Git hooks
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📜 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Here’s a list of useful npm scripts included in the project:
 
-## Learn More
+| Script                 | Description                                                      |
+|-----------------------|------------------------------------------------------------------|
+| `npm run dev`         | Starts the Next.js development server at localhost:3000         |
+| `npm run build`       | Builds the production-ready Next.js app                         |
+| `npm run start`       | Starts the production build                                     |
+| `npm run lint`        | Runs ESLint and auto-fixes issues                              |
+| `npm run lint-staged` | Lints only staged files (used with Husky pre-commit hook)       |
+| `npm run format`      | Formats the entire codebase using Prettier                     |
+| `npm run storybook`   | Starts Storybook locally at localhost:6006                    |
+| `npm run test-storybook` | Runs Storybook component tests                               |
+| `npm run build-storybook` | Builds a static version of Storybook for deployment        |
+| `npm run prepare`     | Initializes Git hooks using Husky                               |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧪 Code Quality & Linting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **ESLint** is used for static code analysis.
+- **Prettier** ensures consistent code formatting.
+- **lint-staged** ensures only staged files are linted.
+- **Husky** enables Git hook scripts for automatic checks.
+- **Commitlint** enforces conventional commit message standards.
 
-## Deploy on Vercel
+### ✅ Commit Message Format
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Examples:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+feat(button): add outline variant
+fix(auth): correct token expiry bug
+```
