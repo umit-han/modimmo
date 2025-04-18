@@ -31,9 +31,9 @@ export const Secondary: Story = {
   },
 };
 
-export const Borderless: Story = {
+export const Outline: Story = {
   args: {
-    variant: "borderless",
-    label: "Borderless Button",
+    variant: "outline",
+    label: "Outline Button",
   },
 };

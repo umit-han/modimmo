@@ -7,7 +7,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   /** Butonun görünen etiketi */
   label: string;
   /** Buton tipi */
-  variant?: "primary" | "secondary" | "borderless";
+  variant?: "primary" | "secondary" | "outline";
   /** Boyut seçeneği */
   size?:
     | "xsm"
@@ -24,7 +24,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   isDisabled?: boolean;
 }
 
-/** UI butonu - birincil, ikincil ve bağlantı şeklinde kullanılabilir */
+/** UI butonu - birincil, ikincil ve outline şeklinde kullanılabilir */
 export const Button: React.FC<ButtonProps> = ({
   label,
   variant = "primary",
@@ -54,9 +54,9 @@ export const Button: React.FC<ButtonProps> = ({
     secondary: isDisabled
       ? "bg-gray-100 text-gray-400 cursor-not-allowed"
       : "bg-gray-900 text-white hover:brightness-110 active:bg-gray-900 cursor-pointer active:text-white",
-    borderless: isDisabled
-      ? "bg-transparent text-gray-400 underline cursor-not-allowed"
-      : "bg-transparent text-white underline cursor-pointer",
+    outline: isDisabled
+      ? "bg-transparent text-gray-400 border border-gray-500 hover:border-transparent hover:bg-gray-500 hover:text-gray-100 cursor-not-allowed"
+      : "bg-transparent text-gray-900 border border-gray-500 hover:border-transparent hover:bg-gray-900 hover:text-white cursor-pointer",
   };
 
   const finalClass = clsx(baseBtn, sizeClasses[size], variantClasses[variant], className);
