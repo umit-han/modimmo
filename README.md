@@ -62,4 +62,3 @@ Examples:
 ```bash
 feat(button): add outline variant
 fix(auth): correct token expiry bug
-```
