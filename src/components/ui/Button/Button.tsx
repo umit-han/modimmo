@@ -33,11 +33,11 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   ...rest
 }) => {
-  const baseBtn = "rounded-full font-bold transition-all";
+  const baseBtn = "rounded-md font-bold leading-6 transition-all";
   const sizeClasses: Record<string, string> = {
     xsm: "py-2 sm:py-2.5 px-6 text-xs",
-    sm: "py-2 sm:py-2.5 px-8 text-sm",
-    md: "py-3 px-10 text-base",
+    sm: "py-2 px-4 text-sm",
+    md: "py-3 px-8 text-base",
     lg: "py-3 px-10 text-lg",
     xlg: "py-4 px-12 text-xl",
     "2xlg": "py-4 px-14 text-2xl",
@@ -49,14 +49,14 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     primary: isDisabled
-      ? "bg-grey text-white cursor-not-allowed"
-      : "bg-red-500 text-white hover:brightness-110 active:brightness-100 cursor-pointer",
+      ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+      : "bg-red-500 text-white hover:brightness-110 active:brightness-100 cursor-pointer active:text-white",
     secondary: isDisabled
-      ? "bg-white border-2 border-grey text-grey cursor-not-allowed"
-      : "bg-white border-2 border-secondary text-secondary hover:shadow-buttonHover active:bg-secondary active:text-white",
+      ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+      : "bg-gray-900 text-white hover:brightness-110 active:bg-gray-900 cursor-pointer active:text-white",
     borderless: isDisabled
-      ? "bg-transparent text-grey underline cursor-not-allowed"
-      : "bg-transparent text-primary underline",
+      ? "bg-transparent text-gray-400 underline cursor-not-allowed"
+      : "bg-transparent text-white underline cursor-pointer",
   };
 
   const finalClass = clsx(baseBtn, sizeClasses[size], variantClasses[variant], className);
